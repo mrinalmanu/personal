@@ -1,0 +1,26 @@
+##############
+Scrivner
+##############
+Scrivener up and running on Ubunutu
+
+# Dependencies
+
+wget http://fr.archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base0.10/libgstreamer-plugins-base0.10-0_0.10.36-1_amd64.deb
+
+wget http://fr.archive.ubuntu.com/ubuntu/pool/universe/g/gstreamer0.10/libgstreamer0.10-0_0.10.36-1.5ubuntu1_amd64.deb
+
+sudo dpkg -i libgstreamer*.deb
+
+#___________
+sudo apt install qt4-qtconfig
+
+Then run qtconfig from either the terminal by typing the same, or from the menu by finding and running Qt Settings.
+
+On the Appearance tab, set the theme to Gtk+. (Or whichever look you fancy.)
+
+Save and exit
+#____________
+
+# Application
+
+https://www.wayoflinux.com/blog/scrivener-returns/Scrivener-1.9.0.1beta-x86_64-Erkus.tar.gz
