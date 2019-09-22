@@ -8,3 +8,4 @@ tutorial    cyverse tutorial    https://cyverse-container-camp-workshop-2018.rea
 tutorial    Gene ontology salmon    https://github.com/hbctraining/DGE_workshop_salmon
 tutorial    Neher lab     https://neherlab.org/pages/teaching.html
 lectures    DTU Computational Molecular Evolution   https://www.youtube.com/playlist?list=PLXwjzs_mabFrlRF7uALEomfGGckG0sG5y
+tools    restez for local copy of entrez    https://github.com/ropensci/restez
