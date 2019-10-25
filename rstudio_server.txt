@@ -107,4 +107,5 @@ For example
 
 http://<server-ip>:8787
 http://172.104.104.180:8787/auth-sign-in
-rstudio wang
+rstudio manu
+
