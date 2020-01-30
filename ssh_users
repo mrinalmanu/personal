@@ -135,6 +135,52 @@ In addition to forwarding windows, you can also forward ports via SSH. For examp
 AllowTcpForwarding no
 There are a bunch of other settings in the ssh_config file, but I do not recommend changing the defaults unless you have a good reason to do so. While the suggested changes will add some security to your server, there are many additional ways to add security. 
 
+#################### creating ssh keys
+
+(source: https://serversforhackers.com/c/creating-and-using-ssh-keys)
+
+Generate an SSH key and use it to log into a user on a new server.On your local computer, create an ssh key:
+
+cd ~/.ssh
+ssh-keygen -t rsa -b 4096 -C "your@email.com" -f id_whatever
+
+# On Mac, copy the public key to clipboard
+cat id_whatever.pub | pbcopy
+What's that command doing:
+
+-t rsa - picking the RSA key type. This is the most-used, but see the resources link below to read on other types.
+-b 4096 - Key size (bits). "Larger is better", sort of.
+-C - A comment, typically used to identity who the key belongs to (an email address or username)
+-f id_whatever - The filename of the SSH key created. In this example, we'll get id_whatever private key and id_whatever.pub public key.
+New User
+On our new server in the video, we make a new user, and then add the SSH key to that user's authorized_keys file, so that we can use our new SSH key to log in as that user.
+
+On the new server:
+
+# Create a new user, give it a password
+# set any additional values you'd like
+sudo adduser fideloper
+
+# Log in as new user, create
+# and go into a ~/.ssh directory
+sudo su fideloper
+mkdir ~/.ssh
+cd ~/.ssh
+
+# Create/edit ~/.ssh/authorized_keys dir
+# and paste in the public key we put into
+# our clipboard when we first created it
+vim authorized_keys
+Then you can log in as that user from your local computer!
+
+# If you only have a few SSH keys, you won't hit the
+# max attempts limit and can just do this:
+ssh fideloper@server-ip
+
+# If you want to explicitly say which ssh key to use, or
+# have enough keys (like me!) to hit the max attempt limit:
+ssh -o "IdentitiesOnly yes" -i ~/.ssh/id_whatever fideloper@server-ip
+
 #################### creating users (source: https://serversforhackers.com/c/creating-users-and-ssh-security)
 
 
