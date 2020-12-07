@@ -1,2 +1,3 @@
 GLMM  http://bbolker.github.io/mixedmodels-misc/ecostats_chap.html
 LM diagnostics  https://www.statmethods.net/stats/rdiagnostics.html
+other LM diagnostics  https://cran.r-project.org/web/packages/olsrr/vignettes/regression_diagnostics.html
